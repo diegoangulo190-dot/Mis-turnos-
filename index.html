@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Control de Turnos y Nómina</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Mis Turnos">
+<meta name="theme-color" content="#0F1B14">
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" sizes="512x512" href="data:image/png;base64,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">
+<link rel="manifest" href='data:application/manifest+json,{"name":"Control%20de%20Turnos%20y%20N%C3%B3mina","short_name":"Mis%20Turnos","start_url":".","display":"standalone","background_color":"%230F1B14","theme_color":"%230F1B14","icons":[{"src":"data:image/png;base64,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","sizes":"512x512","type":"image/png","purpose":"any maskable"},{"src":"data:image/png;base64,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","sizes":"180x180","type":"image/png"}]}'>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<style>
+:root{
+  --bg:#0F1B14; --card:#16261D; --card2:#1C2E23; --line:#24382C;
+  --ink:#D9E3D9; --dim:#8AA192; --mint:#8FD9B6; --gold:#C9A227; --red:#D9695F;
+  --amber:#D98A3C; --blue:#6FA8D9;
+}
+*{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans',sans-serif;padding-bottom:78px;}
+.stamp-font{font-family:'DM Serif Display',serif;}
+.mono{font-family:'IBM Plex Mono',monospace;}
+header{padding:22px 20px 12px;text-align:center;}
+header h1{font-size:24px;margin:0 0 2px;font-weight:400;}
+header p{color:var(--dim);font-size:12.5px;margin:0;}
+
+nav.tabs{display:flex;gap:6px;margin:14px 14px 6px;position:sticky;top:0;background:var(--bg);z-index:20;padding-top:4px;}
+nav.tabs button{flex:1;padding:10px 4px;font-size:11.5px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--dim);font-weight:600;letter-spacing:.3px;}
+nav.tabs button.active{background:var(--card2);color:var(--gold);border-color:var(--gold);}
+
+.view{display:none;padding:6px 16px 20px;}
+.view.active{display:block;}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:14px;}
+.card h3{margin:0 0 12px;font-size:15px;font-weight:400;font-family:'DM Serif Display',serif;color:var(--gold);}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px;}
+.row:last-child{margin-bottom:0;}
+label.lbl{font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:5px;}
+input,select{width:100%;padding:10px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-size:14px;font-family:'IBM Plex Sans';}
+input.mono-input{font-family:'IBM Plex Mono';}
+.field{margin-bottom:10px;}
+.field:last-child{margin-bottom:0;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+
+/* Calendar */
+.cal-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.cal-nav button{background:var(--card2);border:1px solid var(--line);color:var(--gold);border-radius:8px;padding:8px 14px;font-size:16px;}
+.cal-nav .month-label{font-family:'DM Serif Display',serif;font-size:17px;}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;}
+.cal-dow{text-align:center;font-size:10px;color:var(--dim);padding-bottom:4px;text-transform:uppercase;}
+.cal-day{
+  aspect-ratio:1;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-size:12px;background:var(--bg);border:1px solid var(--line);position:relative;color:var(--ink);
+}
+.cal-day.empty{border:none;background:none;}
+.cal-day.sunday{border-color:rgba(217,105,95,0.4);}
+.cal-day .num{font-weight:600;}
+.cal-day .shift-tag{font-size:8.5px;margin-top:1px;font-family:'IBM Plex Mono';letter-spacing:.5px;}
+.cal-day.turnoA{background:rgba(201,162,39,0.22);border-color:var(--gold);}
+.cal-day.turnoB{background:rgba(217,138,60,0.22);border-color:var(--amber);}
+.cal-day.turnoC{background:rgba(111,168,217,0.22);border-color:var(--blue);}
+.cal-day.descanso{background:rgba(255,255,255,0.04);color:var(--dim);}
+.cal-day .fest-dot{position:absolute;top:3px;right:3px;width:5px;height:5px;border-radius:50%;background:var(--red);}
+.legend{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;font-size:11px;color:var(--dim);}
+.legend span{display:inline-flex;align-items:center;gap:5px;}
+.legend .dot{width:10px;height:10px;border-radius:3px;display:inline-block;}
+
+.help{font-size:12px;color:var(--dim);margin-top:10px;line-height:1.5;}
+
+/* Quincena results */
+.qnav{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
+.qnav button{background:var(--card2);border:1px solid var(--line);color:var(--gold);border-radius:8px;padding:8px 14px;}
+.qnav .qlabel{font-family:'DM Serif Display',serif;font-size:15px;text-align:center;}
+.stat-line{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px dashed var(--line);font-size:13.5px;}
+.stat-line:last-child{border-bottom:none;}
+.stat-line .k{color:var(--dim);}
+.stat-line .v{font-family:'IBM Plex Mono';font-weight:600;}
+.stat-line .v.mint{color:var(--mint);}
+.stat-line .v.red{color:var(--red);}
+.total-box{background:var(--card2);border-radius:10px;padding:14px;margin-top:6px;}
+.total-box .big{font-size:26px;font-weight:600;font-family:'IBM Plex Mono';margin-top:4px;}
+.total-box .big.pos{color:var(--mint);}
+.total-box .big.neg{color:var(--red);}
+
+/* gastos */
+.gasto-item{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px dashed var(--line);}
+.gasto-item:last-child{border-bottom:none;}
+.gasto-item .desc{font-size:14px;font-weight:500;}
+.gasto-item .meta{font-size:11px;color:var(--dim);margin-top:2px;}
+.gasto-item .amt{font-family:'IBM Plex Mono';font-weight:600;color:var(--red);}
+.gasto-item .del{background:none;border:none;color:var(--dim);font-size:16px;padding-left:10px;}
+.btn-full{width:100%;padding:13px;border-radius:10px;border:none;background:var(--gold);color:#0F1B14;font-weight:700;font-size:14px;margin-top:4px;}
+.btn-ghost{width:100%;padding:12px;border-radius:10px;border:1px solid var(--line);background:transparent;color:var(--dim);font-weight:600;font-size:13px;margin-top:8px;}
+
+/* holidays list */
+.fest-item{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13px;}
+.fest-item:last-child{border-bottom:none;}
+.fest-item .del{background:none;border:none;color:var(--red);font-size:15px;}
+
+/* sheet modal */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);display:none;align-items:flex-end;z-index:60;}
+.overlay.open{display:flex;}
+.sheet{background:var(--card);width:100%;border-radius:18px 18px 0 0;padding:20px 18px calc(20px + env(safe-area-inset-bottom));max-height:85vh;overflow-y:auto;}
+.sheet h3{margin:0 0 14px;font-family:'DM Serif Display',serif;font-size:19px;font-weight:400;}
+.shift-opt{display:flex;flex-direction:column;gap:8px;margin-bottom:14px;}
+.shift-opt button{padding:13px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-size:14px;text-align:left;font-weight:600;}
+.shift-opt button.a{border-color:var(--gold);}
+.shift-opt button.b{border-color:var(--amber);}
+.shift-opt button.c{border-color:var(--blue);}
+.shift-opt button.d{color:var(--dim);}
+.shift-opt button.selected{background:var(--card2);box-shadow:inset 0 0 0 2px currentColor;}
+.shift-opt button.clear{border-color:var(--red);color:var(--red);}
+.sheet-actions{display:flex;gap:10px;margin-top:16px;}
+.sheet-actions button{flex:1;padding:13px;border-radius:10px;border:none;font-weight:700;font-size:14px;}
+.btn-cancel{background:transparent;color:var(--dim);border:1px solid var(--line) !important;}
+.btn-save{background:var(--gold);color:#0F1B14;}
+
+.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:var(--gold);color:#0F1B14;padding:10px 20px;border-radius:20px;font-size:13px;font-weight:600;opacity:0;transition:opacity .3s;pointer-events:none;z-index:100;}
+.toast.show{opacity:1;}
+
+.export-bar{position:fixed;bottom:0;left:0;right:0;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:linear-gradient(0deg,var(--bg) 65%,transparent);}
+.export-bar button{width:100%;padding:14px;border-radius:12px;border:none;background:var(--mint);color:#0F1B14;font-weight:700;font-size:14px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="stamp-font" style="font-size:11px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;border:1px solid var(--gold);display:inline-block;padding:4px 14px;border-radius:4px;transform:rotate(-1deg);margin-bottom:8px;">Cementos San Marcos</div>
+  <h1 class="stamp-font">Control de Turnos</h1>
+  <p>Calendario · recargos · nómina</p>
+  <button id="installBtn" onclick="installApp()" style="display:none;margin-top:10px;background:var(--gold);color:#0F1B14;border:none;border-radius:20px;padding:8px 18px;font-weight:700;font-size:12.5px;">📲 Instalar app</button>
+</header>
+
+<nav class="tabs">
+  <button class="active" data-view="cal" onclick="showView('cal')">Calendario</button>
+  <button data-view="quin" onclick="showView('quin')">Quincenas</button>
+  <button data-view="gastos" onclick="showView('gastos')">Gastos</button>
+  <button data-view="ajustes" onclick="showView('ajustes')">Ajustes</button>
+</nav>
+
+<!-- CALENDARIO -->
+<div class="view active" id="view-cal">
+  <div class="card">
+    <div class="cal-nav">
+      <button onclick="changeMonth(-1)">‹</button>
+      <div class="month-label" id="monthLabel"></div>
+      <button onclick="changeMonth(1)">›</button>
+    </div>
+    <div class="cal-grid" id="calGrid"></div>
+    <div class="legend">
+      <span><span class="dot" style="background:var(--gold)"></span>Turno A 7-15</span>
+      <span><span class="dot" style="background:var(--amber)"></span>Turno B 15-23</span>
+      <span><span class="dot" style="background:var(--blue)"></span>Turno C 23-7</span>
+      <span><span class="dot" style="background:var(--red)"></span>Festivo</span>
+    </div>
+    <div class="help">Toca un día para asignar el turno. Los domingos se detectan automáticamente y los festivos se marcan con punto rojo (edítalos en Ajustes). El sistema calcula solo recargo nocturno (7pm–6am) y recargo dominical/festivo (diurno y nocturno) según el turno.</div>
+  </div>
+</div>
+
+<!-- QUINCENAS -->
+<div class="view" id="view-quin">
+  <div class="card">
+    <div class="qnav">
+      <button onclick="changeQuincena(-1)">‹</button>
+      <div><div class="qlabel" id="qLabel"></div><div class="help" style="margin-top:2px;text-align:center" id="qCorte"></div></div>
+      <button onclick="changeQuincena(1)">›</button>
+    </div>
+    <div class="stat-line"><span class="k">Valor del día</span><span class="v mint" id="qValorDia">$0</span></div>
+    <div class="stat-line"><span class="k">Valor de la hora</span><span class="v mint" id="qValorHora">$0</span></div>
+    <div class="stat-line"><span class="k">Días trabajados</span><span class="v" id="qDias">0</span></div>
+    <div class="stat-line"><span class="k">Horas ordinarias</span><span class="v" id="qOrd">0</span></div>
+    <div class="stat-line"><span class="k">Horas recargo nocturno (R.N)</span><span class="v mint" id="qRN">0</span></div>
+    <div class="stat-line"><span class="k">Horas dominical/festivo diurno</span><span class="v mint" id="qRDYF">0</span></div>
+    <div class="stat-line"><span class="k">Horas dominical/festivo nocturno</span><span class="v mint" id="qRNDYF">0</span></div>
+  </div>
+
+  <div class="card">
+    <h3>Horas extra (automáticas)</h3>
+    <div class="help" style="margin-top:0">Se calculan solas: si un día tiene horas extra registradas (después del turno), el sistema mira la hora y la fecha para saber si son diurnas, nocturnas, dominicales, o dominicales nocturnas.</div>
+    <div class="stat-line"><span class="k">HED — extra diurna</span><span class="v" id="qHED">0 h</span></div>
+    <div class="stat-line"><span class="k">HEN — extra nocturna</span><span class="v" id="qHEN">0 h</span></div>
+    <div class="stat-line"><span class="k">HED DYF — extra dominical diurna</span><span class="v" id="qHEDDYF">0 h</span></div>
+    <div class="stat-line"><span class="k">HEN DYF — extra dominical nocturna</span><span class="v" id="qHENDYF">0 h</span></div>
+  </div>
+
+  <div class="card">
+    <h3>Devengado</h3>
+    <div class="stat-line"><span class="k">Salario base quincena (auto, base/2)</span><span class="v mint" id="vBase">$0</span></div>
+    <div class="row"><label class="lbl" style="margin:0">Incluir auxilio de transporte</label><input type="checkbox" id="mAux" style="width:auto" onchange="saveManual()"></div>
+    <div class="stat-line"><span class="k">Recargo nocturno (R.N)</span><span class="v mint" id="vRN">$0</span></div>
+    <div class="stat-line"><span class="k">Recargo dominical diurno</span><span class="v mint" id="vRDYF">$0</span></div>
+    <div class="stat-line"><span class="k">Recargo dominical nocturno</span><span class="v mint" id="vRNDYF">$0</span></div>
+    <div class="stat-line"><span class="k">Horas extra (HED/HEN/DYF)</span><span class="v mint" id="vExtra">$0</span></div>
+    <div class="stat-line"><span class="k">Auxilio de transporte</span><span class="v mint" id="vAux">$0</span></div>
+  </div>
+
+  <div class="card">
+    <h3>Deducciones</h3>
+    <div class="stat-line"><span class="k">Préstamo (fijo, edítalo en Ajustes)</span><span class="v red" id="vPrestamo">$0</span></div>
+    <div class="stat-line"><span class="k">Ahorro (fijo, edítalo en Ajustes)</span><span class="v red" id="vAhorro">$0</span></div>
+    <div class="stat-line"><span class="k">Salud (auto <span id="pctSaludLbl">4</span>% del devengado)</span><span class="v red" id="vSalud">$0</span></div>
+    <div class="stat-line"><span class="k">Pensión (auto <span id="pctPensionLbl">4</span>% del devengado)</span><span class="v red" id="vPension">$0</span></div>
+    <div class="stat-line"><span class="k">Gastos / créditos (de esta quincena)</span><span class="v red" id="vGastos">$0</span></div>
+    <div id="gastosQuinList"></div>
+  </div>
+
+  <div class="total-box">
+    <div class="stat-line"><span class="k">Total devengado</span><span class="v mint" id="totDev">$0</span></div>
+    <div class="stat-line"><span class="k">Total deducido</span><span class="v red" id="totDed">$0</span></div>
+    <label class="lbl" style="margin-top:8px">Neto a pagar</label>
+    <div class="big" id="totNeto">$0</div>
+  </div>
+</div>
+
+<!-- GASTOS -->
+<div class="view" id="view-gastos">
+  <div class="card">
+    <h3>Nuevo movimiento</h3>
+    <div class="field"><label class="lbl">Descripción</label><input type="text" id="gDesc" placeholder="Ej: Préstamo compañero"></div>
+    <div class="two-col">
+      <div class="field"><label class="lbl">Tipo</label>
+        <select id="gTipo"><option value="gasto">Gasto</option><option value="credito">Crédito</option></select>
+      </div>
+      <div class="field"><label class="lbl">Valor</label><input type="number" id="gValor" class="mono-input" placeholder="0"></div>
+    </div>
+    <div class="field"><label class="lbl">Fecha</label><input type="date" id="gFecha"></div>
+    <button class="btn-full" onclick="addGasto()">Agregar</button>
+  </div>
+  <div class="card">
+    <h3>Movimientos registrados</h3>
+    <div id="gastosList"></div>
+  </div>
+</div>
+
+<!-- AJUSTES -->
+<div class="view" id="view-ajustes">
+  <div class="card">
+    <h3>Instalar como app</h3>
+    <div class="help" style="margin-top:0">
+      <b>Android (Chrome):</b> menú ⋮ → "Instalar app" o "Añadir a pantalla de inicio".<br><br>
+      <b>iPhone (Safari):</b> botón compartir ⬆ → "Añadir a pantalla de inicio".<br><br>
+      Queda con ícono propio y se abre a pantalla completa, sin barra del navegador.
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Base salarial</h3>
+    <div class="field"><label class="lbl">Salario base mensual</label><input type="number" id="sMinimo" class="mono-input" oninput="saveSettings()"></div>
+    <div class="field"><label class="lbl">Divisor de horas (N)</label><input type="number" id="sDivisor" class="mono-input" oninput="saveSettings()"></div>
+    <div class="two-col">
+      <div class="field"><label class="lbl">Valor del día (base/30)</label><input type="text" id="sValorDia" class="mono-input" disabled></div>
+      <div class="field"><label class="lbl">Valor de la hora (base/N)</label><input type="text" id="sValorHora" class="mono-input" disabled></div>
+    </div>
+    <div class="field"><label class="lbl">Auxilio de transporte (mensual)</label><input type="number" id="sAuxTransporte" class="mono-input" oninput="saveSettings()"></div>
+  </div>
+
+  <div class="card">
+    <h3>Deducciones de ley</h3>
+    <div class="two-col">
+      <div class="field"><label class="lbl">Salud (%)</label><input type="number" id="sPctSalud" class="mono-input" oninput="saveSettings()"></div>
+      <div class="field"><label class="lbl">Pensión (%)</label><input type="number" id="sPctPension" class="mono-input" oninput="saveSettings()"></div>
+    </div>
+    <div class="help">Se calculan automáticamente sobre el total devengado de cada quincena.</div>
+  </div>
+
+  <div class="card">
+    <h3>Préstamos y ahorros fijos</h3>
+    <div class="two-col">
+      <div class="field"><label class="lbl">Préstamo (por quincena)</label><input type="number" id="sPrestamoFijo" class="mono-input" oninput="saveSettings()"></div>
+      <div class="field"><label class="lbl">Ahorro (por quincena)</label><input type="number" id="sAhorroFijo" class="mono-input" oninput="saveSettings()"></div>
+    </div>
+    <div class="help">Se descuentan automáticamente en todas las quincenas hasta que los cambies aquí.</div>
+  </div>
+
+  <div class="card">
+    <h3>Porcentajes de recargo</h3>
+    <div class="two-col">
+      <div class="field"><label class="lbl">R.N (recargo nocturno)</label><input type="number" id="pRN" class="mono-input" oninput="saveSettings()"></div>
+      <div class="field"><label class="lbl">HED (extra diurna)</label><input type="number" id="pHED" class="mono-input" oninput="saveSettings()"></div>
+      <div class="field"><label class="lbl">HEN (extra nocturna)</label><input type="number" id="pHEN" class="mono-input" oninput="saveSettings()"></div>
+      <div class="field"><label class="lbl">R DYF (dominical diurno)</label><input type="number" id="pRDYF" class="mono-input" oninput="saveSettings()"></div>
+      <div class="field"><label class="lbl">RN DYF (dominical nocturno)</label><input type="number" id="pRNDYF" class="mono-input" oninput="saveSettings()"></div>
+      <div class="field"><label class="lbl">HED DYF</label><input type="number" id="pHEDDYF" class="mono-input" oninput="saveSettings()"></div>
+      <div class="field"><label class="lbl">HEN DYF</label><input type="number" id="pHENDYF" class="mono-input" oninput="saveSettings()"></div>
+    </div>
+    <div class="help">Todos los % son editables — ajústalos si tu empresa usa valores distintos.</div>
+  </div>
+
+  <div class="card">
+    <h3>Festivos Colombia 2026</h3>
+    <div id="festList"></div>
+    <div class="two-col" style="margin-top:10px">
+      <input type="date" id="newFestDate">
+      <input type="text" id="newFestName" placeholder="Nombre">
+    </div>
+    <button class="btn-ghost" onclick="addFestivo()">+ Agregar festivo</button>
+    <div class="help">Lista precargada según el calendario oficial 2026 (Ley Emiliani). Verifica y ajusta si tu empresa maneja fechas distintas — hay un par de festivos regionales con fuentes que no coinciden exactamente.</div>
+  </div>
+</div>
+
+<div class="export-bar"><button onclick="exportExcel()">⇩ Exportar Excel</button></div>
+
+<div class="overlay" id="dayOverlay" onclick="if(event.target===this) closeDaySheet()">
+  <div class="sheet">
+    <h3 id="daySheetTitle" class="stamp-font">Día</h3>
+    <div class="shift-opt">
+      <button class="a" id="btnShiftA" onclick="selectShiftTemp('A')">Turno A — 7:00 a 15:00</button>
+      <button class="b" id="btnShiftB" onclick="selectShiftTemp('B')">Turno B — 15:00 a 23:00</button>
+      <button class="c" id="btnShiftC" onclick="selectShiftTemp('C')">Turno C — 23:00 a 7:00</button>
+      <button class="d" id="btnShiftD" onclick="selectShiftTemp('D')">Descanso</button>
+    </div>
+    <label class="lbl">Horas extra después del turno</label>
+    <input type="number" id="dayExtra" class="mono-input" value="0" min="0">
+    <div class="help" style="margin-top:8px">El sistema calcula solo si esas horas caen en diurno/nocturno y si el día es dominical/festivo.</div>
+    <div class="sheet-actions">
+      <button class="btn-cancel" onclick="clearDaySheet()">Quitar día</button>
+      <button class="btn-save" onclick="saveDaySheet()">Guardar</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ---------- DATA ---------- */
+const DEFAULT_FESTIVOS = [
+  ['2026-01-01','Año Nuevo'],['2026-01-12','Reyes Magos'],['2026-03-23','San José'],
+  ['2026-04-02','Jueves Santo'],['2026-04-03','Viernes Santo'],['2026-05-01','Día del Trabajo'],
+  ['2026-05-18','Ascensión del Señor'],['2026-06-08','Corpus Christi'],['2026-06-15','Sagrado Corazón'],
+  ['2026-06-29','San Pedro y San Pablo'],['2026-07-13','Virgen de Chiquinquirá'],['2026-07-20','Independencia'],
+  ['2026-08-07','Batalla de Boyacá'],['2026-08-17','Asunción de la Virgen'],['2026-10-12','Día de la Diversidad Étnica'],
+  ['2026-11-02','Todos los Santos'],['2026-11-16','Independencia de Cartagena'],['2026-12-08','Inmaculada Concepción'],
+  ['2026-12-25','Navidad']
+];
+
+const PERIODS = [
+  {id:'2026-01-PQ',label:'Paga 15 Ene',corte:'corte 22 dic – 5 ene',start:'2025-12-22',end:'2026-01-05'},
+  {id:'2026-01-SQ',label:'Paga 30 Ene',corte:'corte 6 – 20 ene',start:'2026-01-06',end:'2026-01-20'},
+  {id:'2026-02-PQ',label:'Paga 15 Feb',corte:'corte 21 ene – 5 feb',start:'2026-01-21',end:'2026-02-05'},
+  {id:'2026-02-SQ',label:'Paga 30 Feb',corte:'corte 6 – 19 feb',start:'2026-02-06',end:'2026-02-19'},
+  {id:'2026-03-PQ',label:'Paga 15 Mar',corte:'corte 20 feb – 5 mar',start:'2026-02-20',end:'2026-03-05'},
+  {id:'2026-03-SQ',label:'Paga 30 Mar',corte:'corte 6 – 19 mar',start:'2026-03-06',end:'2026-03-19'},
+  {id:'2026-04-PQ',label:'Paga 15 Abr',corte:'corte 20 mar – 5 abr',start:'2026-03-20',end:'2026-04-05'},
+  {id:'2026-04-SQ',label:'Paga 30 Abr',corte:'corte 6 – 20 abr',start:'2026-04-06',end:'2026-04-20'},
+  {id:'2026-05-PQ',label:'Paga 15 May',corte:'corte 21 abr – 5 may',start:'2026-04-21',end:'2026-05-05'},
+  {id:'2026-05-SQ',label:'Paga 30 May',corte:'corte 6 – 20 may',start:'2026-05-06',end:'2026-05-20'},
+  {id:'2026-06-PQ',label:'Paga 15 Jun',corte:'corte 21 may – 3 jun',start:'2026-05-21',end:'2026-06-03'},
+  {id:'2026-06-SQ',label:'Paga 30 Jun',corte:'corte 4 – 18 jun',start:'2026-06-04',end:'2026-06-18'},
+  {id:'2026-07-PQ',label:'Paga 15 Jul',corte:'corte 19 jun – 5 jul',start:'2026-06-19',end:'2026-07-05'},
+  {id:'2026-07-SQ',label:'Paga 30 Jul',corte:'corte 6 – 21 jul',start:'2026-07-06',end:'2026-07-21'},
+  {id:'2026-08-PQ',label:'Paga 15 Ago',corte:'corte 22 jul – 5 ago',start:'2026-07-22',end:'2026-08-05'},
+  {id:'2026-08-SQ',label:'Paga 30 Ago',corte:'corte 6 – 20 ago',start:'2026-08-06',end:'2026-08-20'},
+  {id:'2026-09-PQ',label:'Paga 15 Sep',corte:'corte 21 ago – 5 sep',start:'2026-08-21',end:'2026-09-05'},
+  {id:'2026-09-SQ',label:'Paga 30 Sep',corte:'corte 6 – 20 sep',start:'2026-09-06',end:'2026-09-20'},
+  {id:'2026-10-PQ',label:'Paga 15 Oct',corte:'corte 21 sep – 5 oct',start:'2026-09-21',end:'2026-10-05'},
+  {id:'2026-10-SQ',label:'Paga 30 Oct',corte:'corte 6 – 21 oct',start:'2026-10-06',end:'2026-10-21'},
+  {id:'2026-11-PQ',label:'Paga 15 Nov',corte:'corte 22 oct – 5 nov',start:'2026-10-22',end:'2026-11-05'},
+  {id:'2026-11-SQ',label:'Paga 30 Nov',corte:'corte 6 – 19 nov',start:'2026-11-06',end:'2026-11-19'},
+  {id:'2026-12-PQ',label:'Paga 15 Dic',corte:'corte 20 nov – 3 dic',start:'2026-11-20',end:'2026-12-03'},
+  {id:'2026-12-SQ',label:'Paga 30 Dic',corte:'corte 4 – 20 dic',start:'2026-12-04',end:'2026-12-20'}
+];
+
+// shift segments: [{offsetDays, day:hours, night:hours}]
+const SHIFTS = {
+  A:{name:'Turno A (7-15)', segs:[{off:0, day:8, night:0}]},
+  B:{name:'Turno B (15-23)', segs:[{off:0, day:4, night:4}]},
+  C:{name:'Turno C (23-7)', segs:[{off:0, day:0, night:1},{off:1, day:1, night:6}]}
+};
+
+// shift end time: {offsetDays, hour} -> desde donde empiezan a contar las horas extra
+const SHIFT_END = {A:{off:0,hour:15}, B:{off:0,hour:23}, C:{off:1,hour:7}};
+
+let state = JSON.parse(localStorage.getItem('turnos_state') || 'null') || {
+  settings:{ salarioBase:2823000, divisor:220, auxTransporte:249095,
+    pctSalud:4, pctPension:4, prestamoFijo:0, ahorroFijo:0,
+    pct:{RN:35,HED:125,HEN:175,RDYF:180,RNDYF:210,HEDDYF:125,HENDYF:175} },
+  calendar:{},
+  extra:{},
+  festivos: DEFAULT_FESTIVOS.map(([d,n])=>({date:d,name:n})),
+  gastos:[],
+  manual:{}
+};
+// migración: versiones anteriores guardaban "salarioMinimo" en vez de "salarioBase"
+if(!state.settings.salarioBase){ state.settings.salarioBase = state.settings.salarioMinimo || 2823000; }
+if(state.settings.pctSalud===undefined) state.settings.pctSalud = 4;
+if(state.settings.pctPension===undefined) state.settings.pctPension = 4;
+if(state.settings.prestamoFijo===undefined) state.settings.prestamoFijo = 0;
+if(state.settings.ahorroFijo===undefined) state.settings.ahorroFijo = 0;
+if(!state.extra) state.extra = {};
+function persist(){ localStorage.setItem('turnos_state', JSON.stringify(state)); }
+function valorDia(){ return state.settings.salarioBase/30; }
+function valorHora(){ return state.settings.salarioBase/(state.settings.divisor||220); }
+function baseQuincena(){ return state.settings.salarioBase/2; }
+
+/* ---------- HELPERS ---------- */
+function addDays(iso,n){ const d=new Date(iso+'T00:00:00'); d.setDate(d.getDate()+n); return d.toISOString().slice(0,10); }
+function isSunday(iso){ return new Date(iso+'T00:00:00').getDay()===0; }
+function isFestivo(iso){ return state.festivos.some(f=>f.date===iso); }
+function isDominical(iso){ return isSunday(iso) || isFestivo(iso); }
+function fmt(n){ return '$' + Math.round(n||0).toLocaleString('es-CO'); }
+function getPeriod(iso){
+  return PERIODS.find(p=> iso>=p.start && iso<=p.end);
+}
+function showToast(msg){ const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),1700); }
+
+function computeExtraSegments(dateISO, code, extraHours){
+  const end = SHIFT_END[code];
+  if(!end || !extraHours) return [];
+  const segs = [];
+  for(let i=0;i<extraHours;i++){
+    const absHour = end.hour + i;
+    const dayOffset = end.off + Math.floor(absHour/24);
+    const hourOfDay = ((absHour%24)+24)%24;
+    const date = addDays(dateISO, dayOffset);
+    const night = (hourOfDay>=19 || hourOfDay<6);
+    segs.push({date, night});
+  }
+  return segs;
+}
+
+/* ---------- TABS ---------- */
+function showView(v){
+  document.querySelectorAll('.view').forEach(el=>el.classList.remove('active'));
+  document.getElementById('view-'+v).classList.add('active');
+  document.querySelectorAll('nav.tabs button').forEach(b=>b.classList.toggle('active', b.dataset.view===v));
+  if(v==='quin') renderQuincena();
+  if(v==='gastos') renderGastos();
+  if(v==='ajustes') renderAjustes();
+}
+
+/* ---------- CALENDAR ---------- */
+let calMonth = new Date().getMonth();
+let calYear = new Date().getFullYear();
+if(calYear!==2026){ calYear=2026; calMonth=6; } // default to July 2026 context
+let selectedDate = null;
+
+function changeMonth(delta){
+  calMonth += delta;
+  if(calMonth<0){calMonth=11; calYear--;}
+  if(calMonth>11){calMonth=0; calYear++;}
+  renderCalendar();
+}
+
+function renderCalendar(){
+  const first = new Date(calYear, calMonth, 1);
+  const startDow = first.getDay();
+  const daysInMonth = new Date(calYear, calMonth+1, 0).getDate();
+  const monthNames = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+  document.getElementById('monthLabel').textContent = monthNames[calMonth] + ' ' + calYear;
+
+  const grid = document.getElementById('calGrid');
+  let html = '';
+  ['D','L','M','X','J','V','S'].forEach(d=> html += `<div class="cal-dow">${d}</div>`);
+  for(let i=0;i<startDow;i++) html += `<div class="cal-day empty"></div>`;
+  for(let d=1; d<=daysInMonth; d++){
+    const iso = `${calYear}-${String(calMonth+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    const shift = state.calendar[iso] || '';
+    let cls = 'cal-day';
+    if(isSunday(iso)) cls += ' sunday';
+    if(shift==='A') cls += ' turnoA';
+    if(shift==='B') cls += ' turnoB';
+    if(shift==='C') cls += ' turnoC';
+    if(shift==='D') cls += ' descanso';
+    html += `<div class="${cls}" onclick="openDaySheet('${iso}')">
+      <div class="num">${d}</div>
+      ${shift && shift!=='D' ? `<div class="shift-tag">${shift}${state.extra[iso] ? '+'+state.extra[iso]+'h' : ''}</div>` : (shift==='D' ? '<div class="shift-tag">—</div>' : '')}
+      ${isFestivo(iso) ? '<div class="fest-dot"></div>' : ''}
+    </div>`;
+  }
+  grid.innerHTML = html;
+}
+
+let tempShift = '';
+function openDaySheet(iso){
+  selectedDate = iso;
+  tempShift = state.calendar[iso] || '';
+  const d = new Date(iso+'T00:00:00');
+  document.getElementById('daySheetTitle').textContent = d.toLocaleDateString('es-CO',{weekday:'long', day:'numeric', month:'long'});
+  document.getElementById('dayExtra').value = state.extra[iso] || 0;
+  updateShiftButtons();
+  document.getElementById('dayOverlay').classList.add('open');
+}
+function updateShiftButtons(){
+  ['A','B','C','D'].forEach(code=>{
+    document.getElementById('btnShift'+code).classList.toggle('selected', tempShift===code);
+  });
+}
+function selectShiftTemp(code){
+  tempShift = (tempShift===code) ? '' : code;
+  updateShiftButtons();
+}
+function closeDaySheet(){ document.getElementById('dayOverlay').classList.remove('open'); }
+function saveDaySheet(){
+  const extraVal = parseFloat(document.getElementById('dayExtra').value)||0;
+  if(tempShift===''){ delete state.calendar[selectedDate]; }
+  else { state.calendar[selectedDate] = tempShift; }
+  if(extraVal>0 && tempShift!=='' && tempShift!=='D'){ state.extra[selectedDate] = extraVal; }
+  else { delete state.extra[selectedDate]; }
+  persist();
+  closeDaySheet();
+  renderCalendar();
+}
+function clearDaySheet(){
+  delete state.calendar[selectedDate];
+  delete state.extra[selectedDate];
+  persist();
+  closeDaySheet();
+  renderCalendar();
+}
+
+/* ---------- QUINCENA CALC ---------- */
+let currentPeriodIdx = 0;
+(function initPeriod(){
+  const today = new Date().toISOString().slice(0,10);
+  let idx = PERIODS.findIndex(p=> today>=p.start && today<=p.end);
+  currentPeriodIdx = idx>=0 ? idx : 14; // fallback around july
+})();
+
+function changeQuincena(delta){
+  currentPeriodIdx = Math.min(PERIODS.length-1, Math.max(0, currentPeriodIdx+delta));
+  renderQuincena();
+}
+
+function computePeriodHours(period){
+  let ord=0, rn=0, rdyf=0, rndyf=0, dias=0, hed=0, hen=0, heddyf=0, hendyf=0;
+  Object.keys(state.calendar).forEach(dateISO=>{
+    const code = state.calendar[dateISO];
+    if(code==='D' || !code || !SHIFTS[code]) return;
+    let workedThisDay = false;
+    SHIFTS[code].segs.forEach(seg=>{
+      const segDate = addDays(dateISO, seg.off);
+      if(segDate < period.start || segDate > period.end) return;
+      workedThisDay = true;
+      const dom = isDominical(segDate);
+      if(dom){ rdyf += seg.day; rndyf += seg.night; }
+      else { ord += seg.day; rn += seg.night; }
+    });
+    if(workedThisDay) dias++;
+
+    const extraHrs = state.extra[dateISO] || 0;
+    if(extraHrs>0){
+      computeExtraSegments(dateISO, code, extraHrs).forEach(seg=>{
+        if(seg.date < period.start || seg.date > period.end) return;
+        const dom = isDominical(seg.date);
+        if(dom){ if(seg.night) hendyf++; else heddyf++; }
+        else { if(seg.night) hen++; else hed++; }
+      });
+    }
+  });
+  return {ord, rn, rdyf, rndyf, dias, hed, hen, heddyf, hendyf};
+}
+
+function getManual(pid){
+  if(!state.manual[pid]) state.manual[pid] = {aux:false};
+  return state.manual[pid];
+}
+
+function saveManual(){
+  const pid = PERIODS[currentPeriodIdx].id;
+  const m = getManual(pid);
+  m.aux = document.getElementById('mAux').checked;
+  persist();
+  renderQuincena();
+}
+
+function renderQuincena(){
+  const period = PERIODS[currentPeriodIdx];
+  document.getElementById('qLabel').textContent = period.label;
+  document.getElementById('qCorte').textContent = period.corte;
+  document.getElementById('qValorDia').textContent = fmt(valorDia());
+  document.getElementById('qValorHora').textContent = fmt(valorHora());
+  const h = computePeriodHours(period);
+  document.getElementById('qDias').textContent = h.dias;
+  document.getElementById('qOrd').textContent = h.ord + ' h';
+  document.getElementById('qRN').textContent = h.rn + ' h';
+  document.getElementById('qRDYF').textContent = h.rdyf + ' h';
+  document.getElementById('qRNDYF').textContent = h.rndyf + ' h';
+  document.getElementById('qHED').textContent = h.hed + ' h';
+  document.getElementById('qHEN').textContent = h.hen + ' h';
+  document.getElementById('qHEDDYF').textContent = h.heddyf + ' h';
+  document.getElementById('qHENDYF').textContent = h.hendyf + ' h';
+
+  const m = getManual(period.id);
+  document.getElementById('mAux').checked = m.aux;
+
+  const s = state.settings;
+  const vh = valorHora();
+  const base = baseQuincena();
+  const vRN = h.rn * vh * (s.pct.RN/100);
+  const vRDYF = h.rdyf * vh * (s.pct.RDYF/100);
+  const vRNDYF = h.rndyf * vh * (s.pct.RNDYF/100);
+  const vExtra = h.hed*vh*(s.pct.HED/100) + h.hen*vh*(s.pct.HEN/100) +
+                 h.heddyf*vh*(s.pct.HEDDYF/100) + h.hendyf*vh*(s.pct.HENDYF/100);
+  const vAux = m.aux ? (s.auxTransporte/2) : 0;
+
+  document.getElementById('vRN').textContent = fmt(vRN);
+  document.getElementById('vRDYF').textContent = fmt(vRDYF);
+  document.getElementById('vRNDYF').textContent = fmt(vRNDYF);
+  document.getElementById('vExtra').textContent = fmt(vExtra);
+  document.getElementById('vAux').textContent = fmt(vAux);
+  document.getElementById('vBase').textContent = fmt(base);
+
+  // devengado (antes de deducciones) para calcular salud y pensión sobre este valor
+  const devengadoBruto = base + vAux + vRN + vRDYF + vRNDYF + vExtra;
+  const vSalud = devengadoBruto * (s.pctSalud/100);
+  const vPension = devengadoBruto * (s.pctPension/100);
+  document.getElementById('pctSaludLbl').textContent = s.pctSalud;
+  document.getElementById('pctPensionLbl').textContent = s.pctPension;
+  document.getElementById('vSalud').textContent = fmt(vSalud);
+  document.getElementById('vPension').textContent = fmt(vPension);
+  document.getElementById('vPrestamo').textContent = fmt(s.prestamoFijo);
+  document.getElementById('vAhorro').textContent = fmt(s.ahorroFijo);
+
+  const gastosPeriodoArr = state.gastos.filter(g=> g.fecha>=period.start && g.fecha<=period.end);
+  const gastosPeriodo = gastosPeriodoArr.reduce((sum,g)=> sum+g.valor, 0);
+  document.getElementById('vGastos').textContent = fmt(gastosPeriodo);
+  const listEl = document.getElementById('gastosQuinList');
+  if(gastosPeriodoArr.length===0){
+    listEl.innerHTML = '';
+  } else {
+    listEl.innerHTML = gastosPeriodoArr.map(g=>`
+      <div class="stat-line" style="font-size:12px">
+        <span class="k">${new Date(g.fecha+'T00:00:00').toLocaleDateString('es-CO',{day:'2-digit',month:'short'})} · ${g.desc} (${g.tipo==='gasto'?'Gasto':'Crédito'})</span>
+        <span class="v red">-${fmt(g.valor)}</span>
+      </div>
+    `).join('');
+  }
+
+  const totDev = devengadoBruto;
+  const totDed = vSalud + vPension + s.prestamoFijo + s.ahorroFijo + gastosPeriodo;
+  const neto = totDev - totDed;
+
+  document.getElementById('totDev').textContent = fmt(totDev);
+  document.getElementById('totDed').textContent = fmt(totDed);
+  const netoEl = document.getElementById('totNeto');
+  netoEl.textContent = fmt(neto);
+  netoEl.className = 'big ' + (neto<0?'neg':'pos');
+}
+
+/* ---------- GASTOS ---------- */
+function addGasto(){
+  const desc = document.getElementById('gDesc').value.trim();
+  const tipo = document.getElementById('gTipo').value;
+  const valor = parseFloat(document.getElementById('gValor').value);
+  const fecha = document.getElementById('gFecha').value;
+  if(!desc || !valor || valor<=0 || !fecha){ showToast('Completa todos los campos'); return; }
+  state.gastos.push({id:Date.now(), desc, tipo, valor, fecha});
+  state.gastos.sort((a,b)=> new Date(b.fecha)-new Date(a.fecha));
+  persist();
+  document.getElementById('gDesc').value='';
+  document.getElementById('gValor').value='';
+  showToast('Movimiento agregado');
+  renderGastos();
+}
+function deleteGasto(id){
+  state.gastos = state.gastos.filter(g=>g.id!==id);
+  persist();
+  renderGastos();
+}
+function renderGastos(){
+  document.getElementById('gFecha').value = document.getElementById('gFecha').value || new Date().toISOString().slice(0,10);
+  const list = document.getElementById('gastosList');
+  if(state.gastos.length===0){
+    list.innerHTML = '<div class="help">Sin gastos o créditos registrados.</div>';
+    return;
+  }
+  list.innerHTML = state.gastos.map(g=>`
+    <div class="gasto-item">
+      <div>
+        <div class="desc">${g.desc}</div>
+        <div class="meta">${g.tipo==='gasto'?'Gasto':'Crédito'} · ${new Date(g.fecha+'T00:00:00').toLocaleDateString('es-CO',{day:'2-digit',month:'short'})}</div>
+      </div>
+      <div style="display:flex;align-items:center">
+        <div class="amt">-${fmt(g.valor)}</div>
+        <button class="del" onclick="deleteGasto(${g.id})">✕</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+/* ---------- AJUSTES ---------- */
+function renderAjustes(){
+  const s = state.settings;
+  document.getElementById('sMinimo').value = s.salarioBase;
+  document.getElementById('sDivisor').value = s.divisor;
+  document.getElementById('sAuxTransporte').value = s.auxTransporte;
+  document.getElementById('sValorDia').value = fmt(valorDia());
+  document.getElementById('sValorHora').value = fmt(valorHora());
+  document.getElementById('sPctSalud').value = s.pctSalud;
+  document.getElementById('sPctPension').value = s.pctPension;
+  document.getElementById('sPrestamoFijo').value = s.prestamoFijo;
+  document.getElementById('sAhorroFijo').value = s.ahorroFijo;
+  document.getElementById('pRN').value = s.pct.RN;
+  document.getElementById('pHED').value = s.pct.HED;
+  document.getElementById('pHEN').value = s.pct.HEN;
+  document.getElementById('pRDYF').value = s.pct.RDYF;
+  document.getElementById('pRNDYF').value = s.pct.RNDYF;
+  document.getElementById('pHEDDYF').value = s.pct.HEDDYF;
+  document.getElementById('pHENDYF').value = s.pct.HENDYF;
+
+  const fl = document.getElementById('festList');
+  fl.innerHTML = state.festivos.map((f,i)=>`
+    <div class="fest-item">
+      <span>${new Date(f.date+'T00:00:00').toLocaleDateString('es-CO',{day:'2-digit',month:'short'})} — ${f.name}</span>
+      <button class="del" onclick="deleteFestivo(${i})">✕</button>
+    </div>
+  `).join('');
+}
+function saveSettings(){
+  const s = state.settings;
+  s.salarioBase = parseFloat(document.getElementById('sMinimo').value)||0;
+  s.divisor = parseFloat(document.getElementById('sDivisor').value)||220;
+  s.auxTransporte = parseFloat(document.getElementById('sAuxTransporte').value)||0;
+  s.pctSalud = parseFloat(document.getElementById('sPctSalud').value)||0;
+  s.pctPension = parseFloat(document.getElementById('sPctPension').value)||0;
+  s.prestamoFijo = parseFloat(document.getElementById('sPrestamoFijo').value)||0;
+  s.ahorroFijo = parseFloat(document.getElementById('sAhorroFijo').value)||0;
+  s.pct.RN = parseFloat(document.getElementById('pRN').value)||0;
+  s.pct.HED = parseFloat(document.getElementById('pHED').value)||0;
+  s.pct.HEN = parseFloat(document.getElementById('pHEN').value)||0;
+  s.pct.RDYF = parseFloat(document.getElementById('pRDYF').value)||0;
+  s.pct.RNDYF = parseFloat(document.getElementById('pRNDYF').value)||0;
+  s.pct.HEDDYF = parseFloat(document.getElementById('pHEDDYF').value)||0;
+  s.pct.HENDYF = parseFloat(document.getElementById('pHENDYF').value)||0;
+  persist();
+  document.getElementById('sValorDia').value = fmt(valorDia());
+  document.getElementById('sValorHora').value = fmt(valorHora());
+}
+function addFestivo(){
+  const date = document.getElementById('newFestDate').value;
+  const name = document.getElementById('newFestName').value.trim() || 'Festivo';
+  if(!date){ showToast('Selecciona una fecha'); return; }
+  state.festivos.push({date, name});
+  state.festivos.sort((a,b)=> a.date.localeCompare(b.date));
+  persist();
+  document.getElementById('newFestDate').value='';
+  document.getElementById('newFestName').value='';
+  renderAjustes();
+  renderCalendar();
+}
+function deleteFestivo(i){
+  state.festivos.splice(i,1);
+  persist();
+  renderAjustes();
+  renderCalendar();
+}
+
+/* ---------- EXPORT ---------- */
+function exportExcel(){
+  const s = state.settings;
+  const vh = valorHora();
+  const base = baseQuincena();
+  const rows = PERIODS.map(p=>{
+    const h = computePeriodHours(p);
+    const m = getManual(p.id);
+    const vRN = h.rn*vh*(s.pct.RN/100);
+    const vRDYF = h.rdyf*vh*(s.pct.RDYF/100);
+    const vRNDYF = h.rndyf*vh*(s.pct.RNDYF/100);
+    const vExtra = h.hed*vh*(s.pct.HED/100)+h.hen*vh*(s.pct.HEN/100)+h.heddyf*vh*(s.pct.HEDDYF/100)+h.hendyf*vh*(s.pct.HENDYF/100);
+    const vAux = m.aux ? s.auxTransporte/2 : 0;
+    const gastosPeriodo = state.gastos.filter(g=> g.fecha>=p.start && g.fecha<=p.end).reduce((sum,g)=>sum+g.valor,0);
+    const totDev = base+vAux+vRN+vRDYF+vRNDYF+vExtra;
+    const vSalud = totDev*(s.pctSalud/100);
+    const vPension = totDev*(s.pctPension/100);
+    const totDed = vSalud+vPension+s.prestamoFijo+s.ahorroFijo+gastosPeriodo;
+    return {
+      Periodo:p.label, Corte:p.corte, Dias:h.dias, HorasOrd:h.ord, HorasRN:h.rn, HorasRDYF:h.rdyf, HorasRNDYF:h.rndyf,
+      HED:h.hed, HEN:h.hen, HEDDYF:h.heddyf, HENDYF:h.hendyf,
+      ValorDia:Math.round(valorDia()), ValorHora:Math.round(vh),
+      SalarioBase:Math.round(base), Auxilio:Math.round(vAux), RecargoRN:Math.round(vRN), RecargoRDYF:Math.round(vRDYF), RecargoRNDYF:Math.round(vRNDYF),
+      Extras:Math.round(vExtra), Salud:Math.round(vSalud), Pension:Math.round(vPension), Prestamo:s.prestamoFijo, Ahorro:s.ahorroFijo, Gastos:gastosPeriodo,
+      TotalDevengado:Math.round(totDev), TotalDeducido:Math.round(totDed), Neto:Math.round(totDev-totDed)
+    };
+  });
+  const ws1 = XLSX.utils.json_to_sheet(rows);
+  const ws2 = XLSX.utils.json_to_sheet(state.gastos.map(g=>({Fecha:g.fecha, Tipo:g.tipo, Descripcion:g.desc, Valor:g.valor})));
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws1, 'Quincenas');
+  XLSX.utils.book_append_sheet(wb, ws2, 'Gastos');
+  XLSX.writeFile(wb, `control_turnos_${new Date().toISOString().slice(0,10)}.xlsx`);
+}
+
+/* ---------- INIT ---------- */
+renderCalendar();
+
+let deferredInstallPrompt = null;
+window.addEventListener('beforeinstallprompt', (e)=>{
+  e.preventDefault();
+  deferredInstallPrompt = e;
+  document.getElementById('installBtn').style.display = 'inline-block';
+});
+function installApp(){
+  if(!deferredInstallPrompt) return;
+  deferredInstallPrompt.prompt();
+  deferredInstallPrompt.userChoice.finally(()=>{
+    deferredInstallPrompt = null;
+    document.getElementById('installBtn').style.display = 'none';
+  });
+}
+window.addEventListener('appinstalled', ()=>{
+  document.getElementById('installBtn').style.display = 'none';
+});
+</script>
+</body>
+</html>
